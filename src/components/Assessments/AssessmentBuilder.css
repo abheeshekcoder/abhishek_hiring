@@ -1,0 +1,261 @@
+/* =============================
+   Global Theme Variables
+============================= */
+:root {
+  --bg-primary: #f9fafb;
+  --bg-secondary: #ffffff;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --border-color: #e5e7eb;
+  --accent: #2563eb;
+  --accent-light: #3b82f6;
+  --error-bg: #fee2e2;
+  --error-text: #b91c1c;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --border-color: #374151;
+  --accent: #60a5fa;
+  --accent-light: #3b82f6;
+  --error-bg: #7f1d1d;
+  --error-text: #fecaca;
+  --shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+}
+
+/* =============================
+   Layout & Containers
+============================= */
+.assessment-builder {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* =============================
+   Builder Header
+============================= */
+.builder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.builder-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.builder-content {
+  display: grid;
+  gap: 2rem;
+}
+
+/* =============================
+   Form & Sections
+============================= */
+.assessment-info,
+.questions-section,
+.conditional-logic-section,
+.live-preview-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: background 0.3s, border 0.3s;
+}
+
+/* =============================
+   Typography
+============================= */
+h2, h3, label {
+  color: var(--text-primary);
+}
+
+p, span, input, textarea {
+  color: var(--text-secondary);
+}
+
+/* =============================
+   Form Elements
+============================= */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* =============================
+   Buttons
+============================= */
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.25s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-light);
+}
+
+.btn-secondary {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-primary);
+}
+
+.btn-danger {
+  background: #dc2626;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background: #b91c1c;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =============================
+   Live Preview Section
+============================= */
+.live-preview-panel {
+  margin-top: 2rem;
+}
+
+.preview-header {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.preview-assessment {
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.preview-question {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.preview-question:hover {
+  transform: scale(1.01);
+}
+
+/* =============================
+   Conditional Logic
+============================= */
+.conditional-logic-section {
+  margin-top: 1.5rem;
+}
+
+/* =============================
+   Error & Loading States
+============================= */
+.error-banner {
+  background: var(--error-bg);
+  border: 1px solid var(--border-color);
+  color: var(--error-text);
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border-color);
+  border-top: 4px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* =============================
+   Responsive Design
+============================= */
+@media (max-width: 768px) {
+  .builder-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .conditional-settings {
+    grid-template-columns: 1fr;
+  }
+  .builder-actions {
+    justify-content: center;
+  }
+}
